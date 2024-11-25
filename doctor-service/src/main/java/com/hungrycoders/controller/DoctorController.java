@@ -1,8 +1,11 @@
 package com.hungrycoders.controller;
 
 import com.hungrycoders.DTO.DoctorDTO;
+import com.hungrycoders.exception.ResourceNotFoundException;
 import com.hungrycoders.services.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,17 +18,17 @@ public class DoctorController {
     private DoctorService doctorService;
 
     @GetMapping("/{id}")
-    public DoctorDTO getDoctorById(@PathVariable String id) throws Exception {
-        return doctorService.getDoctorById(id);
+    public ResponseEntity<DoctorDTO> getDoctorById(@PathVariable String id) throws ResourceNotFoundException {
+        return new ResponseEntity<>(doctorService.getDoctorById(id), HttpStatus.OK);
     }
 
     @GetMapping("/all")
-    public List<DoctorDTO> getAllDoctors() throws Exception {
-        return doctorService.getAllDoctors();
+    public ResponseEntity<List<DoctorDTO>> getAllDoctors() throws Exception {
+        return new ResponseEntity<>(doctorService.getAllDoctors(), HttpStatus.OK);
     }
 
     @PostMapping("/")
-    public DoctorDTO save(@RequestBody  DoctorDTO doctorDTO) throws Exception {
-        return doctorService.addDoctor(doctorDTO);
+    public ResponseEntity<DoctorDTO> save(@RequestBody  DoctorDTO doctorDTO) throws Exception {
+        return new ResponseEntity<>(doctorService.addDoctor(doctorDTO), HttpStatus.OK);
     }
 }

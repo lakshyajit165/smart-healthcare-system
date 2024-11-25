@@ -5,3 +5,11 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://tempuser:tempuser@cluster0.yuuhwqt.mongodb.net/healthcare
+
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+        servlet: DEBUG

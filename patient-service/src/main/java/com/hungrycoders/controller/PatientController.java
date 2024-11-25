@@ -1,6 +1,7 @@
 package com.hungrycoders.controller;
 
 import com.hungrycoders.DTO.PatientDTO;
+import com.hungrycoders.exception.ResourceNotFoundException;
 import com.hungrycoders.services.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ public class PatientController {
     private PatientService patientService;
 
     @GetMapping("/{id}")
-    public PatientDTO getPatientById(@PathVariable String id) throws Exception {
+    public PatientDTO getPatientById(@PathVariable String id) throws ResourceNotFoundException {
         return patientService.getPatientById(id);
     }
 

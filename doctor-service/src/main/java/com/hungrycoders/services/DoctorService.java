@@ -1,6 +1,7 @@
 package com.hungrycoders.services;
 
 import com.hungrycoders.DTO.DoctorDTO;
+import com.hungrycoders.exception.ResourceNotFoundException;
 import com.hungrycoders.model.Doctor;
 import com.hungrycoders.repository.DoctorRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,11 +31,12 @@ public class DoctorService {
         return this.toDTO(savedDoctor);
     }
 
-    public DoctorDTO getDoctorById(String id) throws Exception {
+    public DoctorDTO getDoctorById(String id) throws ResourceNotFoundException {
         Optional<Doctor> doctor = doctorRepo.findById(id);
-        if(!doctor.isPresent()) {
-            throw new Exception("Doctor doesn't exists");
+        if(doctor.isEmpty()) {
+            throw new ResourceNotFoundException("Doctor not found!");
         }
+
         return toDTO(doctor.get());
     }
 
