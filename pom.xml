@@ -23,6 +23,7 @@
 	</developers>
     <modules>
         <module>patient-service</module>
+        <module>doctor-service</module>
     </modules>
     <scm>
 		<connection/>

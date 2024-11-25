@@ -14,7 +14,7 @@ public class PatientController {
     private PatientService patientService;
 
     @GetMapping("/{id}")
-    public PatientDTO getPatientById(@RequestParam String id) throws Exception {
+    public PatientDTO getPatientById(@PathVariable String id) throws Exception {
         return patientService.getPatientById(id);
     }
 

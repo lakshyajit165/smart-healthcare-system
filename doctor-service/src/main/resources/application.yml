@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: doctor-service
+
+  data:
+    mongodb:
+      uri: mongodb+srv://tempuser:tempuser@cluster0.yuuhwqt.mongodb.net/healthcare
