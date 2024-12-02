@@ -13,3 +13,6 @@ logging:
       springframework:
         web: DEBUG
         servlet: DEBUG
+
+server:
+  port: 8081
