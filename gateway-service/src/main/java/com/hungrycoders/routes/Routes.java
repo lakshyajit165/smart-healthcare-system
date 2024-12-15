@@ -26,7 +26,6 @@ public class Routes {
         return GatewayRouterFunctions
                 .route("appointment_service")
                 .route(RequestPredicates.path("/appointment/**"),
-                        .filter()
                         HandlerFunctions.http("http://localhost:8082"))
                 .build();
     }
