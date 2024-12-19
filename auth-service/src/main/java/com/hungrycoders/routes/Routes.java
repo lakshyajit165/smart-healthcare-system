@@ -20,7 +20,7 @@ public class Routes {
                          * runs and debugging
                          */
                         HandlerFunctions.http("http://doctor-service:8081"))
-                .build();
+                        .build();
 
 
     }
@@ -35,6 +35,6 @@ public class Routes {
                          * runs and debugging
                          */
                         HandlerFunctions.http("http://appointment-service:8082"))
-                .build();
+                        .build();
     }
 }

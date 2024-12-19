@@ -1,3 +1,4 @@
+
 spring:
     application:
         name: api-gateway
@@ -13,3 +14,4 @@ hungrycoder:
     app:
         jwtSecret: "======================BezKoder=Spring==========================="
         jwtExpirationMs: 86400000
+
